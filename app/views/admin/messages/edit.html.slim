@@ -1,0 +1,9 @@
+.container
+  .row
+    h1 Answer to questions
+
+
+
+    = bootstrap_form_for ([:admin, message, answer]) do |f|
+      = f.text_field :description
+      = f.submit
