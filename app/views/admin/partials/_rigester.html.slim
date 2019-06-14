@@ -1,0 +1,6 @@
+.pull-right
+  - if admin_user_signed_in?
+    | Logged in as #{current_admin_user.email}
+    = link_to "Logout", destroy_admin_user_session_path, method: :delete, class: 'navbar-link'
+  - else
+    = link_to "Login", new_admin_user_session_path, class: 'navbar-link'

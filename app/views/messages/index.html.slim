@@ -1,0 +1,8 @@
+.container
+  .row
+    h1 do you have questions?
+
+    = bootstrap_form_for message do |f|
+      = f.email_field :email
+      = f.text_area :description
+      = f.submit
