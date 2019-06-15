@@ -12,7 +12,7 @@ module Admin
   private
 
     def answer_params
-      params.require(:answer).permit!
+      params.require(:answer).permit(:description)
     end   
   end
 end

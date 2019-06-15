@@ -1,8 +1,4 @@
-.container
-  .row
-    .col-md-8
-	  - messages.find_each do |message|
-	    ul.list-unstyled.ui-sortable
-	  	  li= message.description
-	  	  - if message.question == true
-	        li= link_to 'Reply', edit_admin_message_path(message)
+- messages.find_each do |message|
+  ul.list-unstyled.ui-sortable
+    li= message.description
+    li= link_to 'Reply', edit_admin_message_path(message)

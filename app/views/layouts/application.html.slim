@@ -6,8 +6,18 @@ head
 = stylesheet_link_tag 'application', media: 'all'
   
 body
+  nav.navbar.navbar-default.navbar-static-top
+  .container
+    .row
+      = render 'partials/flash_messages'
+      = yield
 
-  = render 'partials/flash_messages'
-  = yield
+  .container
+      hr
+      /! Footer
+      footer
+        .row
+          .col-lg-12
+            p Copyright &copy; Your Website 2019
   
 = javascript_include_tag 'application'

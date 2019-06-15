@@ -1,8 +1,7 @@
-.container
-  .row
-    = bootstrap_form_tag url: new_message_path, method: :get do |f|
-      = f.hidden_field :question, value: true
-      = f.submit 'Ask a question'
-    = bootstrap_form_tag url: new_message_path, method: :get do |f|
-      = f.hidden_field :question, value: false
-      = f.submit 'Leave a feedback'
+= bootstrap_form_tag url: new_message_path, method: :get do |f|
+  = f.hidden_field :question, value: true
+  = f.submit 'Ask a question'
+hr
+= bootstrap_form_tag url: new_message_path, method: :get do |f|
+  = f.hidden_field :question, value: false
+  = f.submit 'Leave a feedback'
