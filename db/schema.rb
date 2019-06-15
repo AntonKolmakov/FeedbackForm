@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2019_06_14_110727) do
     t.string "email", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_messages_on_email", unique: true
+    t.index ["email"], name: "index_messages_on_email"
   end
 
   create_table "users", force: :cascade do |t|

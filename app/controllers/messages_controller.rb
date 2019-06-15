@@ -1,9 +1,15 @@
 class MessagesController < ApplicationController
   expose :message
 
+  def index
+  end
+
   def create
-    message.save
-    respond_with message, location: -> { root_path }
+    if message.save
+      respond_with message, location: -> { root_path }
+    else
+      render :index
+    end
   end
   
 private
