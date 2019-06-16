@@ -1,12 +1,15 @@
 module Admin
   class AnswersController < Admin::ApplicationController
     expose :message
-    expose :answer
+    expose (:answer) { message.build_answer}
     
     def create
-      message.build_answer(answer_params).save
-      UserMailer.with(message: message).feedback_email.deliver_now
-      respond_with :admin, message, location: -> { admin_root_path }
+      if answer.save
+        UserMailer.with(message: message).feedback_email.deliver_now
+        respond_with :admin, message, location: -> { admin_root_path }
+      else
+        render 'admin/messages/edit'
+      end
     end
 
   private

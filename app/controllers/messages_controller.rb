@@ -1,16 +1,11 @@
 class MessagesController < ApplicationController
-
   def new
   	@message = Message.new(question: params[:question])
   end
 
   def create
-  	@message = Message.new(message_params)
-    if @message.save
-      respond_with @message, location: -> { root_path }
-    else
-      render :new
-    end
+  	@message = Message.create(message_params)
+    respond_with @message, location: -> { root_path }
   end
   
 private

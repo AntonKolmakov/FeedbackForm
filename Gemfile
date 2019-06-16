@@ -18,7 +18,6 @@ gem 'slim'
 gem 'bootstrap_form'
 gem 'jquery-rails'
 gem 'decent_exposure'
-gem 'responders'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
