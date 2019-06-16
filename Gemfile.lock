@@ -272,6 +272,7 @@ DEPENDENCIES
   pg
   puma (~> 3.11)
   rails (~> 5.2.3)
+  responders
   rspec-rails
   sass-rails (~> 5.0)
   selenium-webdriver

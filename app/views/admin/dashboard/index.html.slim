@@ -1,4 +1,4 @@
-- messages.find_each do |message|
+- messages.each do |message|
   ul.list-unstyled.ui-sortable
     li= message.description
     li= link_to 'Reply', edit_admin_message_path(message)
