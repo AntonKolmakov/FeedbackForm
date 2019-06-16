@@ -1,5 +1,5 @@
 module Admin
   class DashboardController < Admin::ApplicationController
-    expose(:messages) { Message.all}
+    expose(:messages) { Message.page(params[:page]).per(10) }
   end
 end
