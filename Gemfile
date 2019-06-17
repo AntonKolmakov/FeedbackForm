@@ -20,6 +20,7 @@ gem 'jquery-rails'
 gem 'decent_exposure'
 gem 'responders'
 gem 'kaminari'
+gem 'sidekiq'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

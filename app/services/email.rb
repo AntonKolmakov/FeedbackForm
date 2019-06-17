@@ -1,5 +1,5 @@
 class Email
   def self.deliver(message)
-    UserMailer.with(message: message).feedback_email.deliver_now
+  	EmailWorker.perform_async(message.id)
   end
 end

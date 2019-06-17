@@ -1,10 +1,12 @@
 require 'spec_helper'
+require 'sidekiq/testing'
 
 describe Email do
   describe '#send_email' do
+    Sidekiq::Testing.fake!
     let(:message) { create(:message, question: true) }
     let!(:answer) { create(:answer, message: message) }
-    let(:mail) { Email.deliver(message) }
+    let(:mail) {EmailWorker.new.perform(message.id)}
     let(:description_answer) { message.answer.description } 
 
     it "delivers email" do
