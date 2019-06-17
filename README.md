@@ -1,24 +1,12 @@
-# README
+This application has a simple functionality. The user can add a question and leave a feedback so that the administrator can see what the question is and answer it by email.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+You can find this app by clicking on the link. [feedbackform-user.herokuapp.com](https://feedbackform-user.herokuapp.com)
+Leave a feedback or question. After that you can go to the admin panel with email: admin@admin.com and password: secret.
+The administrator can see all unanswered questions and answer them by e-mail.
 
-Things you may want to cover:
+For background job you should run:
+```
+redis-server /usr/local/etc/redis.conf
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+bundle exec sidekiq
+```
